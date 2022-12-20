@@ -45,7 +45,7 @@ public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilte
     protected void successfulAuthentication(HttpServletRequest request, HttpServletResponse response, FilterChain chain, Authentication authResult) throws IOException, ServletException {
         var userDetailsData = (UserDetailsData) authResult.getPrincipal();
         var token = JwtUtils.getInstance().generateToken(userDetailsData);
-        var tokenResponse = new TokenResponse(token);
+        var tokenResponse = new TokenResponse(token, userDetailsData.getName(),userDetailsData.getUsername());
         response.setContentType("application/json");
         response.getWriter().write(new ObjectMapper().writeValueAsString(tokenResponse));
         response.getWriter().flush();

@@ -17,4 +17,6 @@ public class User {
     private String username;
     @Column(name = "SENHABD")
     private String password;
+    @Column(name = "NOME")
+    private String name;
 }

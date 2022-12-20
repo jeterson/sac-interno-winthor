@@ -11,7 +11,6 @@ import java.util.Optional;
 public class UserDetailsData implements UserDetails {
 
     private Optional<User> user;
-    private Integer id;
 
     public UserDetailsData(User user) {
         this.user = Optional.ofNullable(user);
@@ -27,6 +26,9 @@ public class UserDetailsData implements UserDetails {
 
     public Integer getId() {
         return user.orElse(new User()).getId();
+    }
+    public String getName() {
+        return user.orElse(new User()).getName();
     }
 
     @Override
