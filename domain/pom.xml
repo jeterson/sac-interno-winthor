@@ -9,7 +9,18 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>application</artifactId>
+    <artifactId>domain</artifactId>
+    <packaging>pom</packaging>
+    <modules>
 
+        <module>domain-core</module>
+        <module>domain-application-service</module>
+        <module>domain-application-service-impl</module>
+    </modules>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+    </properties>
 
 </project>
