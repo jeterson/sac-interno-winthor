@@ -4,10 +4,11 @@ import com.thorconsultoria.winthor.sac.domain.application.input.service.UserAppl
 import com.thorconsultoria.winthor.sac.domain.application.output.repository.UserRepository;
 import com.thorconsultoria.winthor.sac.domain.core.entities.User;
 import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class UserApplicationServiceImpl implements UserApplicationService {
     private final UserRepository userRepository;
 
