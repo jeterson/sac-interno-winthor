@@ -11,5 +11,15 @@
 
     <artifactId>application</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.thorconsultoria</groupId>
+            <artifactId>common-application</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.thorconsultoria</groupId>
+            <artifactId>domain-application-service</artifactId>
+        </dependency>
+    </dependencies>
 
 </project>

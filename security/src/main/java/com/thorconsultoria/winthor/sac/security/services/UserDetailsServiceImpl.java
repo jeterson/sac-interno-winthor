@@ -3,6 +3,7 @@ package com.thorconsultoria.winthor.sac.security.services;
 import com.thorconsultoria.winthor.sac.domain.application.input.service.UserApplicationService;
 import com.thorconsultoria.winthor.sac.security.UserDetailsData;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -13,7 +14,8 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class UserDetailsServiceImpl implements UserDetailsService {
 
-    private final UserApplicationService userService;
+    @Qualifier("userSecurityApplicationService")
+    private final UserApplicationService userSecurityApplicationService;
     private final PasswordEncoder passwordEncoder;
 
     @Override
@@ -24,7 +26,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
                 .id(1)
                 .name("JETERSON MIRANDA GOMES")
                 .build();*/
-        var user = userService.findByUsername(username);
+        var user = userSecurityApplicationService.findByUsername(username);
 
         if(user == null)
             throw new UsernameNotFoundException("User not found with username " + username);

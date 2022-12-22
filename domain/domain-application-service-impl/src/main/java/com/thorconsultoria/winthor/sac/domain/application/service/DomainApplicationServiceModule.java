@@ -1,5 +1,8 @@
 package com.thorconsultoria.winthor.sac.domain.application.service;
 
+import com.thorconsultoria.winthor.sac.domain.application.input.service.UserApplicationService;
+import com.thorconsultoria.winthor.sac.domain.application.service.user.UserApplicationServiceImpl;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
@@ -8,4 +11,5 @@ import org.springframework.context.annotation.Configuration;
         { "com.thorconsultoria.winthor.sac.domain.application",
           "com.thorconsultoria.winthor.sac.domain.application.service" })
 public class DomainApplicationServiceModule {
+
 }
