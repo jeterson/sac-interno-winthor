@@ -14,6 +14,7 @@ import java.util.stream.Collectors;
 @Slf4j
 public abstract class GlobalExceptionHandler {
 
+    public static final String PREFIX_ENUM_CONSTRAINT_EXCEPTION = "No enum constant";
     @ResponseBody
     @ExceptionHandler(value = {Exception.class})
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
@@ -27,7 +28,7 @@ public abstract class GlobalExceptionHandler {
 
     @ResponseBody
     @ExceptionHandler(value = {IllegalArgumentException.class})
-    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
+    //@ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     public ErrorDTO handleException(IllegalArgumentException exception) {
         log.error(exception.getMessage(), exception);
         return ErrorDTO.builder()

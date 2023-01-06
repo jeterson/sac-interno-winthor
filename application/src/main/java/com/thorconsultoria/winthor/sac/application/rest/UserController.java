@@ -22,7 +22,6 @@ public class UserController {
     @GetMapping("/{username}")
     public ResponseEntity<User> findByUsername(@PathVariable String username) {
         var user = userApplicationService.findByUsername(username);
-        user.removePassword();
         return ResponseEntity.ok(user);
     }
 }

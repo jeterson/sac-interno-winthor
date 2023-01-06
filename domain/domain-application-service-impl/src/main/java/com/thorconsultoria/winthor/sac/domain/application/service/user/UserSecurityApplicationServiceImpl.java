@@ -19,8 +19,8 @@ public class UserSecurityApplicationServiceImpl implements UserApplicationServic
             return User.builder()
                     .id(user.get().getId())
                     .name(user.get().getName())
-                    .username(user.get().getUsername())
-                    .password(user.get().getPassword())
+                    .username(user.get().getUsername().toLowerCase())
+                    .password(user.get().getPassword().toLowerCase())
                     .build();
 
         return null;

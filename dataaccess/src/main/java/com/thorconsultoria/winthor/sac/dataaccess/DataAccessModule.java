@@ -1,4 +1,4 @@
-package com.thorconsultoria.winthor.sac.dataaccess.user;
+package com.thorconsultoria.winthor.sac.dataaccess;
 
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.ComponentScan;

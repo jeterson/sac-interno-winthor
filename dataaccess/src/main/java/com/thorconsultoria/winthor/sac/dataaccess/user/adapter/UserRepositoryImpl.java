@@ -20,8 +20,7 @@ public class UserRepositoryImpl implements UserRepository {
 
     @Override
     public Optional<User> findByUsername(String username) {
-        var user = userJpaRepository.findByUsername(username).map(userDataAccessMapper::userEntityToUser);
-
+        var user = userJpaRepository.findByUsername(username.toUpperCase()).map(userDataAccessMapper::userEntityToUser);
         if(user.isPresent())
             user.get().setPassword(winThorDecryptPasswordRepository.decryptPassword(user.get().getId()));
 

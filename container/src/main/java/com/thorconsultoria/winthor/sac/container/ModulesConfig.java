@@ -1,7 +1,7 @@
 package com.thorconsultoria.winthor.sac.container;
 
 import com.thorconsultoria.winthor.sac.application.ApplicationModule;
-import com.thorconsultoria.winthor.sac.dataaccess.user.DataAccessModule;
+import com.thorconsultoria.winthor.sac.dataaccess.DataAccessModule;
 import com.thorconsultoria.winthor.sac.domain.application.service.DomainApplicationServiceModule;
 import com.thorconsultoria.winthor.sac.security.SecurityModule;
 import org.springframework.context.annotation.Configuration;

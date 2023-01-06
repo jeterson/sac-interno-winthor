@@ -4,6 +4,7 @@ import com.thorconsultoria.winthor.sac.domain.core.entities.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import javax.swing.text.html.Option;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Optional;
@@ -58,5 +59,17 @@ public class UserDetailsData implements UserDetails {
     @Override
     public boolean isEnabled() {
         return true;
+    }
+
+    public Optional<User> getUser() {
+
+       if(user.isEmpty())
+           return Optional.ofNullable(null);
+
+       return Optional.of(User.builder()
+                       .id(user.get().getId())
+                       .name(user.get().getName())
+                       .username(user.get().getUsername())
+               .build());
     }
 }
